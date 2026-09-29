@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+package dk.via.pro3.slaughterhouse.generated; // generated code, ignored by git
+
+// Service to retrieve information about animals and products.
+service SlaughterhouseService {
+  // Registration numbers of all animals involved in a product.
+  rpc GetAnimalsByProduct(GetAnimalsByProductRequest) returns (GetAnimalsByProductResponse);
+  // All products an animal has been involved in.
+  rpc GetProductsByAnimal(GetProductsByAnimalRequest) returns (GetProductsByAnimalResponse);
+}
+
+// A product packed at station 3.
+message Product {
+  int32 product_id = 1;
+  string name = 2;
+  // SAME_TYPE or HALF_ANIMAL
+  string product_type = 3;
+  // ISO date, e.g. 2026-09-05
+  string packaged_date = 4;
+}
+
+message GetAnimalsByProductRequest {
+  int32 product_id = 1;
+}
+
+message GetAnimalsByProductResponse {
+  // "repeated" = a list
+  repeated string registration_numbers = 1;
+}
+
+message GetProductsByAnimalRequest {
+  string registration_number = 1;
+}
+
+message GetProductsByAnimalResponse {
+  repeated Product products = 1;
+}
