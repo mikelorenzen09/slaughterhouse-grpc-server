@@ -1,0 +1,20 @@
+# Use this workspace to collaborate
+workspace:
+  id: a8a8a540-414f-43de-8f0d-967056462b45
+
+localResources:
+  specs:
+    - ../target/classes/slaughterhouse.proto
+    - ../src/main/proto/slaughterhouse.proto
+    - ../target/protobuf-maven-plugin/generate/generate/archives/proto-google-common-protos-2.64.1-910c2f8d35c15eca65e2b0e9dd8bc0a64f00ef83/google/api/annotations.proto
+    - ../target/protobuf-maven-plugin/generate/generate/archives/proto-google-common-protos-2.64.1-910c2f8d35c15eca65e2b0e9dd8bc0a64f00ef83/google/api/auth.proto
+    - ../target/protobuf-maven-plugin/generate/generate/archives/proto-google-common-protos-2.64.1-910c2f8d35c15eca65e2b0e9dd8bc0a64f00ef83/google/api/backend.proto
+    - ../target/protobuf-maven-plugin/generate/generate/archives/proto-google-common-protos-2.64.1-910c2f8d35c15eca65e2b0e9dd8bc0a64f00ef83/google/api/billing.proto
+    - ../target/protobuf-maven-plugin/generate/generate/archives/proto-google-common-protos-2.64.1-910c2f8d35c15eca65e2b0e9dd8bc0a64f00ef83/google/api/client.proto
+    - ../target/protobuf-maven-plugin/generate/generate/archives/proto-google-common-protos-2.64.1-910c2f8d35c15eca65e2b0e9dd8bc0a64f00ef83/google/api/config_change.proto
+    - ../target/protobuf-maven-plugin/generate/generate/archives/proto-google-common-protos-2.64.1-910c2f8d35c15eca65e2b0e9dd8bc0a64f00ef83/google/api/consumer.proto
+    - ../target/protobuf-maven-plugin/generate/generate/archives/proto-google-common-protos-2.64.1-910c2f8d35c15eca65e2b0e9dd8bc0a64f00ef83/google/api/context.proto
+    - ../target/protobuf-maven-plugin/generate/generate/archives/proto-google-common-protos-2.64.1-910c2f8d35c15eca65e2b0e9dd8bc0a64f00ef83/google/api/control.proto
+    - ../target/protobuf-maven-plugin/generate/generate/archives/proto-google-common-protos-2.64.1-910c2f8d35c15eca65e2b0e9dd8bc0a64f00ef83/google/api/distribution.proto
+    - ../target/protobuf-maven-plugin/generate/generate/archives/proto-google-common-protos-2.64.1-910c2f8d35c15eca65e2b0e9dd8bc0a64f00ef83/google/api/documentation.proto
+    - ../target/protobuf-maven-plugin/generate/generate/archives/proto-google-common-protos-2.64.1-910c2f8d35c15eca65e2b0e9dd8bc0a64f00ef83/google/api/endpoint.proto

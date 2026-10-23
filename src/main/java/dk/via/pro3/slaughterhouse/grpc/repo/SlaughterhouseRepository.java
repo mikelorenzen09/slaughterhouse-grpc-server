@@ -1,47 +1,18 @@
 package dk.via.pro3.slaughterhouse.grpc.repo;
 
-import dk.via.pro3.slaughterhouse.grpc.model.ProductRecord;
-import org.springframework.jdbc.core.simple.JdbcClient;
-import org.springframework.stereotype.Service;
+import dk.via.pro3.slaughterhouse.grpc.model.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-// Reads from the database. JdbcClient is created by Spring from application.properties.
-@Service
-public class SlaughterhouseRepository {
+// Repository for Product. Spring Data JPA generates the implementation at startup,
+// including the query below, which it builds from the method name.
+public interface SlaughterhouseRepository extends JpaRepository<Product, Integer> {
 
-  private final JdbcClient jdbc;
-
-  public SlaughterhouseRepository(JdbcClient jdbc) {
-    this.jdbc = jdbc;
-  }
-
-  // Query 1 from queries.sql
-  public List<String> findRegistrationNumbersByProduct(int productId) {
-    return jdbc.sql("""
-                        SELECT DISTINCT p.animal_registration_number
-                        FROM product_tray pt
-                                 JOIN part p ON p.tray_id = pt.tray_id
-                        WHERE pt.product_id = :productId
-                        ORDER BY p.animal_registration_number
-                        """)
-        .param("productId", productId)
-        .query(String.class)
-        .list();
-  }
-
-  // Query 2 from queries.sql
-  public List<ProductRecord> findProductsByAnimal(String registrationNumber) {
-    return jdbc.sql("""
-                        SELECT DISTINCT pr.product_id, pr.name, pr.product_type, pr.packaged_date
-                        FROM part p
-                                 JOIN product_tray pt ON pt.tray_id = p.tray_id
-                                 JOIN product pr ON pr.product_id = pt.product_id
-                        WHERE p.animal_registration_number = :regNo
-                        ORDER BY pr.product_id
-                        """)
-        .param("regNo", registrationNumber)
-        .query(ProductRecord.class)
-        .list();
-  }
+    // Query 2 from queries.sql: all products an animal has been involved in.
+    // Read the name as: find DISTINCT products
+    //   BY trays -> parts -> animal -> registrationNumber = the parameter,
+    //   ORDER BY productId.
+    // The underscores mark each step through a relationship.
+    List<Product> findDistinctByTrays_Parts_Animal_RegistrationNumberOrderByProductId(String registrationNumber);
 }
