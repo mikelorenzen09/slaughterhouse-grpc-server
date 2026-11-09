@@ -1,0 +1,21 @@
+$kind: http-request
+order: 10000
+method: POST
+url: '{{base_url}}/api/v1/animals'
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "registrationNumber": "{{run_id}}-invalid",
+      "species": "Pig",
+      "weightKg": 0,
+      "arrivalDate": "2026-11-05",
+      "origin": "Farm-A-{{run_id}}"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Nonpositive weight returns 400', () => pm.response.to.have.status(400));

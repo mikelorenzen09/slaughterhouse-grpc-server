@@ -1,0 +1,11 @@
+$kind: http-request
+order: 4000
+method: GET
+url: '{{base_url}}/api/v1/animals/{{run_id}}-1'
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Individual animal preserves all fields', () => {
+        pm.response.to.have.status(200);
+        pm.expect(pm.response.json()).to.deep.equal({registrationNumber: pm.collectionVariables.get('run_id')+'-1', species:'Pig', weightKg:120.125, arrivalDate:'2026-11-05', origin:'Farm-A-'+pm.collectionVariables.get('run_id')});
+      });

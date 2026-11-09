@@ -1,0 +1,13 @@
+$kind: http-request
+order: 5000
+method: GET
+url: '{{base_url}}/api/v1/animals/date/2026-11-05'
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Date search includes the right animals and excludes another date', () => {
+        pm.response.to.have.status(200);
+        const rows=pm.response.json(), ids=rows.map(a=>a.registrationNumber), run=pm.collectionVariables.get('run_id');
+        pm.expect(ids).to.include(run+'-1').and.include(run+'-2').and.not.include(run+'-3');
+        rows.forEach(a=>pm.expect(a.arrivalDate).to.equal('2026-11-05'));
+      });

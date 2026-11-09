@@ -1,0 +1,59 @@
+Slaughterhouse registration and traceability
+
+Requirements: Java 25 and PostgreSQL.
+
+Database setup
+Create a database named slaughterhouse and run database/schema.sql in it.
+The script can also upgrade an existing Part 2 database: it adds animal.origin
+without deleting records. Existing animals may have an unknown origin.
+Set your database credentials in src/main/resources/application.properties.
+Hibernate's ddl-auto remains none; the setup script is run manually.
+
+Start the application
+Run SlaughterhouseApplication in IntelliJ to start both REST and gRPC, or run:
+  .\mvnw.cmd spring-boot:run
+JAVA_HOME must point to Java 25 when using Maven.
+REST listens on localhost:8080; gRPC listens on localhost:9090.
+Shared JPA entities are in model; shared database repositories are in repository.
+The grpc and rest packages contain their respective API components.
+
+REST operations
+  POST /api/v1/animals
+  GET  /api/v1/animals/{registrationNumber}
+  GET  /api/v1/animals/date/{date}
+  GET  /api/v1/animals/origin/{origin}
+
+Example POST body:
+  {"registrationNumber":"DK-123","species":"Pig","weightKg":120.125,
+   "arrivalDate":"2026-11-05","origin":"Farm A"}
+species is optional. The other four fields are required; weightKg must be positive.
+POST returns 201 and a Location header. Duplicate registrations return 409.
+Unknown individual animals return 404; unmatched searches return an empty list.
+Date paths use YYYY-MM-DD. REST responses omit the JPA relationship graph.
+
+Tests
+  .\mvnw.cmd test
+This runs service tests. The PostgreSQL integration test is enabled separately:
+create a dedicated slaughterhouse_test database, run database/schema.sql in it,
+then run these PowerShell commands (using the same PostgreSQL credentials):
+  $env:SLAUGHTERHOUSE_TEST_DATABASE_URL='jdbc:postgresql://localhost:5432/slaughterhouse_test'
+  .\mvnw.cmd test
+  Remove-Item Env:SLAUGHTERHOUSE_TEST_DATABASE_URL
+The integration test checks REST persistence, filters, errors, flat JSON, and
+both original gRPC queries. It removes only its own uniquely named fixtures.
+
+With the application running, the saved Postman checks can be run locally:
+  postman collection run postman/collections/animal-registration --no-report-events
+Use a test database: the collection creates three uniquely named animals.
+Override the collection's base_url variable when using another port.
+
+Architecture
+docs/architecture contains C1, C2 and C3 as PNG, SVG and editable .drawio files.
+The C3 shows the single backend and AnimalRepository shared by REST and gRPC.
+The .NET frontend, offline station applications, and delayed synchronization
+are marked as planned; they are outside the Part 3 REST implementation.
+
+Teacher examples
+The REST controller and service structure follow rest-api-example.
+The DTO pattern follows library-service; repository methods follow the JPA lesson.
+Database integration tests use the teacher's in-process gRPC test setup.

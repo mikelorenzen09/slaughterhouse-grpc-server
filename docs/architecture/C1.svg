@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1000" viewBox="0 0 1500 1000"><rect width="100%" height="100%" fill="white"/>
+<text x="60" y="52" text-anchor="start" dominant-baseline="central" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#17324d">C1 - Slaughterhouse system context</text>
+<circle cx="230" cy="213" r="23" fill="#103f6c"/><rect x="185" y="243" width="90" height="44" rx="13" fill="#103f6c"/>
+<text x="230" y="314" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#17324d">Reception operator</text>
+<circle cx="1270" cy="213" r="23" fill="#103f6c"/><rect x="1225" y="243" width="90" height="44" rx="13" fill="#103f6c"/>
+<text x="1270" y="314" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#17324d">Cutting operator</text>
+<circle cx="230" cy="683" r="23" fill="#103f6c"/><rect x="185" y="713" width="90" height="44" rx="13" fill="#103f6c"/>
+<text x="230" y="784" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#17324d">Packing operator</text>
+<circle cx="1270" cy="683" r="23" fill="#103f6c"/><rect x="1225" y="713" width="90" height="44" rx="13" fill="#103f6c"/>
+<text x="1270" y="784" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#17324d">External recall operator</text>
+<rect x="540" y="380" width="420" height="190" rx="3" fill="#1768ad" stroke="#103f6c" stroke-width="3"/>
+<text x="750.0" y="442.0" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="white">Slaughterhouse system</text>
+<text x="750.0" y="478.0" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="white">Animal registration</text>
+<text x="750.0" y="511.0" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="23" font-weight="400" fill="white">and product traceability</text>
+<polyline points="230,335 230,435 540,435" fill="none" stroke="#53677b" stroke-width="3"/>
+<polygon points="540,435 528.2941876694152,440.654551943446 528.2941876694152,429.345448056554" fill="#53677b"/>
+<text x="390" y="405" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#53677b">Registers arriving animals</text>
+<polyline points="1270,335 1270,435 960,435" fill="none" stroke="#53677b" stroke-width="3"/>
+<polygon points="960,435 971.7058123305848,429.345448056554 971.7058123305848,440.654551943446" fill="#53677b"/>
+<text x="1120" y="405" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#53677b">Registers cuts and trays</text>
+<polyline points="320,700 480,700 480,530 540,530" fill="none" stroke="#53677b" stroke-width="3"/>
+<polygon points="540,530 528.2941876694152,535.654551943446 528.2941876694152,524.345448056554" fill="#53677b"/>
+<text x="300" y="650" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#53677b">Registers packed products</text>
+<polyline points="1180,700 1020,700 1020,530 960,530" fill="none" stroke="#53677b" stroke-width="3"/>
+<polygon points="960,530 971.7058123305848,524.345448056554 971.7058123305848,535.654551943446" fill="#53677b"/>
+<text x="1230" y="650" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#53677b">Looks up animals and products</text>
+<text x="750" y="910" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="21" font-weight="400" fill="#53677b">Registration and traceability services are implemented; cutting and packing applications are planned.</text>
+</svg>

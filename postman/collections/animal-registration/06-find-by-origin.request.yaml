@@ -1,0 +1,13 @@
+$kind: http-request
+order: 6000
+method: GET
+url: '{{base_url}}/api/v1/animals/origin/Farm-A-{{run_id}}'
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Farm search returns only animals from that farm', () => {
+        pm.response.to.have.status(200);
+        const rows=pm.response.json(), run=pm.collectionVariables.get('run_id');
+        pm.expect(rows.map(a=>a.registrationNumber)).to.have.members([run+'-1',run+'-3']);
+        rows.forEach(a=>pm.expect(a.origin).to.equal('Farm-A-'+run));
+      });

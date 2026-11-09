@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="C3 Components" id="C3 Components">
+    <mxGraphModel page="1" pageWidth="2060" pageHeight="1440">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="C3 - Slaughterhouse backend components" style="text;html=1;align=left;fontFamily=Arial;fontSize=38;fontColor=#17324d;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="60" y="28.0" width="789.0" height="52" />
+        </mxCell>
+        <mxCell id="subtitle" value="Animal registration (REST) and traceability queries (gRPC), sharing JPA repositories" style="text;html=1;align=left;fontFamily=Arial;fontSize=23;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="60" y="85.5" width="886.953125" height="37" />
+        </mxCell>
+        <mxCell id="reception" value="" style="shape=umlActor;fillColor=#103f6c;strokeColor=#103f6c;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="200" y="152" width="90" height="97" />
+        </mxCell>
+        <mxCell id="reception-label" value="Reception operator" style="text;html=1;align=center;fontFamily=Arial;fontSize=23;fontColor=#17324d;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="129.0" y="256.5" width="232.0" height="37" />
+        </mxCell>
+        <mxCell id="recall" value="" style="shape=umlActor;fillColor=#103f6c;strokeColor=#103f6c;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1170" y="152" width="90" height="97" />
+        </mxCell>
+        <mxCell id="recall-label" value="Recall operator (external)" style="text;html=1;align=center;fontFamily=Arial;fontSize=23;fontColor=#17324d;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1065.5" y="256.5" width="299.0" height="37" />
+        </mxCell>
+        <mxCell id="rest-client" value="&lt;b&gt;REST client&lt;/b&gt;&lt;br&gt;Postman / API client" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#103f6c;strokeWidth=2;fontFamily=Arial;fontSize=20;fontColor=#17324d;spacing=12;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="95" y="315" width="300" height="85" />
+        </mxCell>
+        <mxCell id="frontend" value="&lt;b&gt;.NET / C# frontend&lt;/b&gt;&lt;br&gt;Planned" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f7f9;strokeColor=#7b8b9b;strokeWidth=2;fontFamily=Arial;fontSize=20;fontColor=#53677b;spacing=12;dashed=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1065" y="315" width="300" height="85" />
+        </mxCell>
+        <mxCell id="uses-rest" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" target="rest-client">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="245" y="288" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uses-frontend" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" target="frontend">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1215" y="288" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="backend" value="" style="fillColor=#f0f6fc;strokeColor=#103f6c;strokeWidth=3;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="60" y="490" width="1940" height="640" />
+        </mxCell>
+        <mxCell id="backend-title" value="Slaughterhouse backend | Java / Spring Boot | one application" style="text;html=1;align=right;fontFamily=Arial;fontSize=24;fontColor=#103f6c;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1242.0" y="447.0" width="738.0" height="38" />
+        </mxCell>
+        <mxCell id="rest-group" value="Animal registration" style="text;html=1;align=center;fontFamily=Arial;fontSize=25;fontColor=#103f6c;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="536.5" y="547.5" width="247.0" height="39" />
+        </mxCell>
+        <mxCell id="grpc-group" value="Traceability queries" style="text;html=1;align=center;fontFamily=Arial;fontSize=25;fontColor=#103f6c;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1502.5078125" y="547.5" width="254.984375" height="39" />
+        </mxCell>
+        <mxCell id="animal-controller" value="&lt;b&gt;AnimalController&lt;/b&gt;&lt;br&gt;REST endpoints" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1768ad;strokeColor=#103f6c;strokeWidth=2;fontFamily=Arial;fontSize=20;fontColor=white;spacing=12;" vertex="1" parent="backend">
+          <mxGeometry as="geometry" x="50" y="130" width="270" height="150" />
+        </mxCell>
+        <mxCell id="animal-service" value="&lt;b&gt;AnimalServiceImpl&lt;/b&gt;&lt;br&gt;implements AnimalService&lt;br&gt;Business logic / validation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1768ad;strokeColor=#103f6c;strokeWidth=2;fontFamily=Arial;fontSize=20;fontColor=white;spacing=12;" vertex="1" parent="backend">
+          <mxGeometry as="geometry" x="350" y="130" width="270" height="150" />
+        </mxCell>
+        <mxCell id="animal-repository" value="&lt;b&gt;AnimalRepository&lt;/b&gt;&lt;br&gt;Spring Data JPA&lt;br&gt;Shared by REST and gRPC" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1768ad;strokeColor=#103f6c;strokeWidth=2;fontFamily=Arial;fontSize=20;fontColor=white;spacing=12;" vertex="1" parent="backend">
+          <mxGeometry as="geometry" x="650" y="420" width="270" height="150" />
+        </mxCell>
+        <mxCell id="grpc-server" value="&lt;b&gt;GrpcSlaughterhouseServer&lt;/b&gt;&lt;br&gt;gRPC endpoints" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1768ad;strokeColor=#103f6c;strokeWidth=2;fontFamily=Arial;fontSize=20;fontColor=white;spacing=12;" vertex="1" parent="backend">
+          <mxGeometry as="geometry" x="1020" y="130" width="270" height="150" />
+        </mxCell>
+        <mxCell id="grpc-service" value="&lt;b&gt;SlaughterhouseService&lt;/b&gt;&lt;br&gt;Domain service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1768ad;strokeColor=#103f6c;strokeWidth=2;fontFamily=Arial;fontSize=20;fontColor=white;spacing=12;" vertex="1" parent="backend">
+          <mxGeometry as="geometry" x="1320" y="130" width="270" height="150" />
+        </mxCell>
+        <mxCell id="grpc-repository" value="&lt;b&gt;SlaughterhouseRepository&lt;/b&gt;&lt;br&gt;Spring Data JPA" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1768ad;strokeColor=#103f6c;strokeWidth=2;fontFamily=Arial;fontSize=20;fontColor=white;spacing=12;" vertex="1" parent="backend">
+          <mxGeometry as="geometry" x="1620" y="420" width="270" height="150" />
+        </mxCell>
+        <mxCell id="http" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" source="rest-client" target="animal-controller">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="http-label" value="HTTP / REST / JSON" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="271.5" y="415.5" width="223.0" height="35" />
+        </mxCell>
+        <mxCell id="grpc" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" source="frontend" target="grpc-server">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="grpc-label" value="gRPC / Protobuf" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1252.5" y="415.5" width="175.0" height="35" />
+        </mxCell>
+        <mxCell id="rest-call" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" source="animal-controller" target="animal-service">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="rest-call-label" value="Java method call" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="303.5" y="794.5" width="183.0" height="35" />
+        </mxCell>
+        <mxCell id="grpc-call" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" source="grpc-server" target="grpc-service">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="grpc-call-label" value="Java method call" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1273.5" y="794.5" width="183.0" height="35" />
+        </mxCell>
+        <mxCell id="rest-animals" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" source="animal-service" target="animal-repository">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="545" y="985" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rest-animals-label" value="Registers and reads animals" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="188.0" y="909.5" width="294.0" height="35" />
+        </mxCell>
+        <mxCell id="grpc-animals" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" source="grpc-service" target="animal-repository">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1515" y="850" />
+              <mxPoint x="1040" y="850" />
+              <mxPoint x="1040" y="985" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="grpc-animals-label" value="Queries animals (Java method call)" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1050.5" y="874.5" width="359.0" height="35" />
+        </mxCell>
+        <mxCell id="grpc-products" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" source="grpc-service" target="grpc-repository">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1815" y="695" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="grpc-products-label" value="Queries products" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1608.0" y="809.5" width="184.0" height="35" />
+        </mxCell>
+        <mxCell id="dto-note" value="REST uses a flat AnimalDTO" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="141.5078125" y="1049.5" width="296.984375" height="35" />
+        </mxCell>
+        <mxCell id="database" value="&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;br&gt;Shared database" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1768ad;strokeColor=#103f6c;strokeWidth=2;fontFamily=Arial;fontSize=20;fontColor=white;spacing=12;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="900" y="1240" width="260" height="100" />
+        </mxCell>
+        <mxCell id="rest-db" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" source="animal-repository" target="database">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="845" y="1205" />
+              <mxPoint x="985" y="1205" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rest-db-label" value="Reads and writes (JPA)" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="537.5078125" y="1164.5" width="244.984375" height="35" />
+        </mxCell>
+        <mxCell id="grpc-db" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" source="grpc-repository" target="database">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1815" y="1205" />
+              <mxPoint x="1075" y="1205" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="grpc-db-label" value="Reads (JPA)" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1614.5078125" y="1164.5" width="140.984375" height="35" />
+        </mxCell>
+        <mxCell id="status-note" value="REST and gRPC services are implemented. The .NET frontend is planned." style="text;html=1;align=center;fontFamily=Arial;fontSize=20;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="689.0" y="1380.0" width="682.0" height="34" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

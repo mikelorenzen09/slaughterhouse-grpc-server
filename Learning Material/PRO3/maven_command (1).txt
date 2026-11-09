@@ -1,0 +1,1 @@
+mvn -B archetype:generate -DgroupId=dk.via.pro3 -DartifactId=maven-project-example -Dversion=1.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=LATEST

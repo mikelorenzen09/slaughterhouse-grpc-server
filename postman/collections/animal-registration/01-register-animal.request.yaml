@@ -1,0 +1,24 @@
+$kind: http-request
+order: 1000
+method: POST
+url: '{{base_url}}/api/v1/animals'
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "registrationNumber": "{{run_id}}-1",
+      "species": "Pig",
+      "weightKg": 120.125,
+      "arrivalDate": "2026-11-05",
+      "origin": "Farm-A-{{run_id}}"
+    }
+scripts:
+  - type: beforeRequest
+    code: |-
+      pm.collectionVariables.set('run_id', 'POSTMAN-' + pm.variables.replaceIn('{{$randomUUID}}'));
+  - type: afterResponse
+    code: |-
+      pm.test('Registered with a retrievable location', () => { pm.response.to.have.status(201); pm.expect(pm.response.headers.get('Location')).to.include('/api/v1/animals/' + pm.collectionVariables.get('run_id')); });

@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="C1 System context" id="C1 System context">
+    <mxGraphModel page="1" pageWidth="1500" pageHeight="1000">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="C1 - Slaughterhouse system context" style="text;html=1;align=left;fontFamily=Arial;fontSize=36;fontColor=#17324d;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="60" y="29.0" width="642.0" height="50" />
+        </mxCell>
+        <mxCell id="reception" value="" style="shape=umlActor;fillColor=#103f6c;strokeColor=#103f6c;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="185" y="190" width="90" height="97" />
+        </mxCell>
+        <mxCell id="reception-label" value="Reception operator" style="text;html=1;align=center;fontFamily=Arial;fontSize=23;fontColor=#17324d;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="114.0" y="297.5" width="232.0" height="37" />
+        </mxCell>
+        <mxCell id="cutting" value="" style="shape=umlActor;fillColor=#103f6c;strokeColor=#103f6c;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1225" y="190" width="90" height="97" />
+        </mxCell>
+        <mxCell id="cutting-label" value="Cutting operator" style="text;html=1;align=center;fontFamily=Arial;fontSize=23;fontColor=#17324d;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1169.5" y="297.5" width="201.0" height="37" />
+        </mxCell>
+        <mxCell id="packing" value="" style="shape=umlActor;fillColor=#103f6c;strokeColor=#103f6c;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="185" y="660" width="90" height="97" />
+        </mxCell>
+        <mxCell id="packing-label" value="Packing operator" style="text;html=1;align=center;fontFamily=Arial;fontSize=23;fontColor=#17324d;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="126.0" y="767.5" width="208.0" height="37" />
+        </mxCell>
+        <mxCell id="recall" value="" style="shape=umlActor;fillColor=#103f6c;strokeColor=#103f6c;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1225" y="660" width="90" height="97" />
+        </mxCell>
+        <mxCell id="recall-label" value="External recall operator" style="text;html=1;align=center;fontFamily=Arial;fontSize=23;fontColor=#17324d;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1131.5" y="767.5" width="277.0" height="37" />
+        </mxCell>
+        <mxCell id="system" value="&lt;b&gt;Slaughterhouse system&lt;/b&gt;&lt;br&gt;Animal registration&lt;br&gt;and product traceability" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1768ad;strokeColor=#103f6c;strokeWidth=2;fontFamily=Arial;fontSize=20;fontColor=white;spacing=12;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="540" y="380" width="420" height="190" />
+        </mxCell>
+        <mxCell id="register" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" target="system">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="230" y="335" />
+            <Array as="points">
+              <mxPoint x="230" y="435" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="register-label" value="Registers arriving animals" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="255.5" y="389.5" width="269.0" height="35" />
+        </mxCell>
+        <mxCell id="cut" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" target="system">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1270" y="335" />
+            <Array as="points">
+              <mxPoint x="1270" y="435" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cut-label" value="Registers cuts and trays" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="994.0" y="389.5" width="252.0" height="35" />
+        </mxCell>
+        <mxCell id="pack" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" target="system">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="320" y="700" />
+            <Array as="points">
+              <mxPoint x="480" y="700" />
+              <mxPoint x="480" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pack-label" value="Registers packed products" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="162.0" y="634.5" width="276.0" height="35" />
+        </mxCell>
+        <mxCell id="recall-query" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#53677b;" target="system">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1180" y="700" />
+            <Array as="points">
+              <mxPoint x="1020" y="700" />
+              <mxPoint x="1020" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="recall-query-label" value="Looks up animals and products" style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1070.0" y="634.5" width="320.0" height="35" />
+        </mxCell>
+        <mxCell id="status" value="Registration and traceability services are implemented; cutting and packing applications are planned." style="text;html=1;align=center;fontFamily=Arial;fontSize=21;fontColor=#53677b;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="257.0" y="894.5" width="986.0" height="35" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
