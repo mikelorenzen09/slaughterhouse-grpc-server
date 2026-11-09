@@ -1,0 +1,8 @@
+$kind: http-request
+order: 12000
+method: GET
+url: '{{base_url}}/api/v1/animals/date/not-a-date'
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Malformed date returns 400', () => pm.response.to.have.status(400));

@@ -1,10 +1,10 @@
 package dk.via.pro3.slaughterhouse.grpc.service;
 
-import dk.via.pro3.slaughterhouse.grpc.model.Animal;
-import dk.via.pro3.slaughterhouse.grpc.model.Product;
-import dk.via.pro3.slaughterhouse.grpc.model.ProductRecord;
-import dk.via.pro3.slaughterhouse.grpc.repo.AnimalRepository;
-import dk.via.pro3.slaughterhouse.grpc.repo.SlaughterhouseRepository;
+import dk.via.pro3.slaughterhouse.model.Animal;
+import dk.via.pro3.slaughterhouse.model.Product;
+import dk.via.pro3.slaughterhouse.model.ProductRecord;
+import dk.via.pro3.slaughterhouse.repository.AnimalRepository;
+import dk.via.pro3.slaughterhouse.repository.SlaughterhouseRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

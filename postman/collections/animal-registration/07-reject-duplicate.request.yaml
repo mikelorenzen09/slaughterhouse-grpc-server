@@ -1,0 +1,21 @@
+$kind: http-request
+order: 7000
+method: POST
+url: '{{base_url}}/api/v1/animals'
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "registrationNumber": "{{run_id}}-1",
+      "species": "Pig",
+      "weightKg": 999,
+      "arrivalDate": "2026-11-05",
+      "origin": "Farm-A-{{run_id}}"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Duplicate registration is rejected', () => pm.response.to.have.status(409));

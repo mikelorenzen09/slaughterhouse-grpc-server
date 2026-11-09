@@ -1,7 +1,7 @@
 package dk.via.pro3.slaughterhouse.grpc;
 
 import dk.via.pro3.slaughterhouse.generated.*;
-import dk.via.pro3.slaughterhouse.grpc.model.ProductRecord;
+import dk.via.pro3.slaughterhouse.model.ProductRecord;
 import dk.via.pro3.slaughterhouse.grpc.service.SlaughterhouseService;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;

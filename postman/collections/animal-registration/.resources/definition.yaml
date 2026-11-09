@@ -1,0 +1,11 @@
+$kind: collection
+name: Animal Registration
+description: |-
+  Part 3 REST checks. Run against a test database: this collection creates three
+  uniquely named animals and intentionally leaves them there. Required fields:
+  registrationNumber, weightKg (positive), arrivalDate (YYYY-MM-DD), origin (farm).
+  species is optional. Responses contain scalar animal fields, without JPA relationships.
+  Set base_url to target another local port. No credentials are stored in this collection.
+variables:
+  - key: base_url
+    value: 'http://localhost:8080'

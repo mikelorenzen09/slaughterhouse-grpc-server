@@ -1,4 +1,4 @@
-package dk.via.pro3.slaughterhouse.grpc.model;
+package dk.via.pro3.slaughterhouse.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -26,6 +26,7 @@ public class Animal {
     private String species;
     private BigDecimal weightKg;
     private LocalDate arrivalDate;
+    private String origin;
 
     @OneToMany(mappedBy = "animal")
     private List<Part> parts = new ArrayList<>();

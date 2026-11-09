@@ -1,4 +1,4 @@
-package dk.via.pro3.slaughterhouse.grpc.model;
+package dk.via.pro3.slaughterhouse.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

@@ -1,4 +1,4 @@
-package dk.via.pro3.slaughterhouse.grpc.model;
+package dk.via.pro3.slaughterhouse.model;
 
 import java.time.LocalDate;
 

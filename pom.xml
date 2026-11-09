@@ -10,10 +10,10 @@
     </parent>
 
     <groupId>dk.via.pro3</groupId>
-    <artifactId>slaughterhouse-grpc-server</artifactId>
+    <artifactId>slaughterhouse-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>slaughterhouse-grpc-server</name>
-    <description>Slaughterhouse gRPC service (PRO3 course assignment, part 2)</description>
+    <name>slaughterhouse-server</name>
+    <description>Slaughterhouse gRPC and REST services (PRO3 course assignment)</description>
 
     <properties>
         <java.version>25</java.version>
@@ -21,6 +21,10 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
+        </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-services</artifactId>

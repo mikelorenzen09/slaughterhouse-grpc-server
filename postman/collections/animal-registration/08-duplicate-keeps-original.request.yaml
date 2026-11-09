@@ -1,0 +1,8 @@
+$kind: http-request
+order: 8000
+method: GET
+url: '{{base_url}}/api/v1/animals/{{run_id}}-1'
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Rejected duplicate did not overwrite the animal', () => { pm.response.to.have.status(200); pm.expect(pm.response.json().weightKg).to.equal(120.125); });

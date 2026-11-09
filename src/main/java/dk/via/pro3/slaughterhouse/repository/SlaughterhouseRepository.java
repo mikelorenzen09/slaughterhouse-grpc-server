@@ -1,6 +1,6 @@
-package dk.via.pro3.slaughterhouse.grpc.repo;
+package dk.via.pro3.slaughterhouse.repository;
 
-import dk.via.pro3.slaughterhouse.grpc.model.Product;
+import dk.via.pro3.slaughterhouse.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SlaughterhouseGrpcServerApplication {
+public class SlaughterhouseApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SlaughterhouseGrpcServerApplication.class, args);
+        SpringApplication.run(SlaughterhouseApplication.class, args);
     }
 
 }
